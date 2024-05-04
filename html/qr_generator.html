@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Generador de QR</title>
+    <link rel="icon" href="../assets/icons/codigoQR.png" type="image/png">
+    <link rel="apple-touch-icon" href="../assets/icons/codigoQR.png">
+    <link rel="manifest" href="../assets/icons/codigoQR.png">
+    <link rel="stylesheet" href="../styles/qr/qr.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Generador de QR</h1>
+      <div class="formulario">
+        <label for="tamanioQR">Tamaño del código QR:</label>
+        <select id="tamanioQR">
+          <option value="150">Pequeño</option>
+          <option value="200" selected>Mediano</option>
+          <option value="250">Grande</option>
+        </select>
+
+        <label for="colorQR">Color del código QR:</label>
+        <input type="color" id="colorQR" value="#000000" />
+
+        <label for="nivelErrorQR">Nivel de corrección de errores:</label>
+        <select id="nivelErrorQR">
+          <option value="L">Bajo (L)</option>
+          <option value="M">Medio (M)</option>
+          <option value="Q">Alto (Q)</option>
+          <option value="H" selected>Muy alto (H)</option>
+        </select>
+        <label for="contenidoQR">Contenido del código QR:</label>
+        <input
+          type="text"
+          id="contenidoQR"
+          placeholder="Ingrese el contenido del código QR"
+        />
+        <button onclick="generarCodigoQR()">Generar QR</button>
+        <div id="codigoQR" class="codigo"></div>
+        <button
+          id="btnDescargarQR"
+          onclick="descargarCodigoQR()"
+          class="hidden"
+        >
+          Descargar QR
+        </button>
+      </div>
+    </div>
+    <center>
+      <div class="botones-compartir">
+        <a href="#" class="boton-twitter">Twitter</a>
+        <a href="#" class="boton-facebook">Facebook</a>
+        <a href="#" class="boton-whatsapp">WhatsApp</a>
+      </div>
+    </center>
+
+    <script src="../scripts/qr/qrcode.min.js"></script>
+    <script src="../scripts/qr/qr_generator.js"></script>
+  </body>
+</html>

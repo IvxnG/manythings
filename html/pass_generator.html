@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Contraseñas</title>
+    <link rel="icon" href="../assets/icons/bloquear.png" type="image/png">
+    <link rel="apple-touch-icon" href="../assets/icons/bloquear.png">
+    <link rel="manifest" href="../assets/icons/bloquear.png">
+    <link rel="stylesheet" href="../styles/pass/pass.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Generador de Contraseñas</h1>
+        <form id="passwordForm">
+            <label for="length">Longitud de la Contraseña:</label>
+            <input type="number" id="length" name="length" min="4" max="30" value="12">
+            
+            <label for="uppercase">Incluir Letras Mayúsculas:</label>
+            <input type="checkbox" id="uppercase" name="uppercase" checked>
+            
+            <label for="lowercase">Incluir Letras Minúsculas:</label>
+            <input type="checkbox" id="lowercase" name="lowercase" checked>
+            
+            <label for="numbers">Incluir Números:</label>
+            <input type="checkbox" id="numbers" name="numbers" checked>
+            
+            <label for="symbols">Incluir Símbolos:</label>
+            <input type="checkbox" id="symbols" name="symbols" checked>
+            
+            <button type="button" onclick="generatePassword()">Generar Contraseña</button>
+        </form>
+        <label for="passwordResult">Contraseña:</label>
+        <div id="passwordResult" class="password-result"></div>
+        <button id="copyButton" onclick="copyPassword()">Copiar al Portapapeles</button>
+    </div>
+    <script src="../scripts/pass/pass.js"></script>
+</body>
+</html>
